@@ -3,11 +3,23 @@
 <head>
 <title>PS4 [5.05] 7.00 - 13.52 FW GoldHEN Host by SCORPION</title>
 <link rel="stylesheet" href="../style.css">
+<style>
+    /* Styling to make all default text visible on your dark background */
+    h1 {
+        color: #ffffff !important;
+        text-shadow: 2px 2px 5px #000000, -2px -2px 5px #000000, 2px -2px 5px #000000, -2px 2px 5px #000000;
+    }
+    hr {
+        border: 0;
+        height: 1px;
+        background: #f31414;
+    }
+</style>
 </head>
 <body style="background-image: url('img.jpg'); background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat;">
 
-<!-- Logo Container placed on the left side with large dimensions -->
-<div style="float: left; margin: 20px; padding: 10px;">
+<!-- Logo Container moved to the right to line up perfectly under the PS4 text -->
+<div style="float: left; margin-top: 20px; margin-left: 50px; padding: 10px;">
     <img src="logo_scorp.png" alt="Logo" style="width: 250px; height: auto; display: block;">
 </div>
 
@@ -15,7 +27,7 @@
 var uaFull = navigator.userAgent;
 var match = uaFull.match(/PlayStation 4[ /]([\d.]+)/i);
 var isPS4 = match !== null;
-var fwVersion = isPS4 ? match[1] : "Unknown";
+var fwVersion = isPS4 ? match : "Unknown";
 var fwNum = parseFloat(fwVersion);
 
 function onScriptError() {
@@ -24,7 +36,7 @@ function onScriptError() {
 
 if (!isPS4) {
     document.addEventListener("DOMContentLoaded", () => {
-        msgs.innerHTML = "Only for PS4 with Firmware 5.05 and 7.00 to 13.52";
+        msgs.innerHTML = "PS4  ALL 5.05 and 7.00 to 13.52";
     });
 } else {
     if (window.applicationCache.status == '0') {
